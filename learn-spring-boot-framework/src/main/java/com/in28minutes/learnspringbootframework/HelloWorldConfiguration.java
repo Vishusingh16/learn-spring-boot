@@ -21,7 +21,7 @@ public class HelloWorldConfiguration {
         return "ranga";
 
     }
-
+@Bean
     public int age() {
         return 53;
 
@@ -37,7 +37,8 @@ public class HelloWorldConfiguration {
     }
     @Bean
     public Person person5qualifier(String name , int age, @Qualifier("address3qualifier") Address address){
-        return new Person(name(),age() ,address);
+        return new Person(name, age, address);
+       // return new Person(name(),age() ,address);
 
 
     }
@@ -54,6 +55,7 @@ public class HelloWorldConfiguration {
 //        return new Person(name,age,address2);
 //    }
 @Bean
+@Primary
 public Person person3Parameters(){
     String name = "YourName"; // Or any desired name
     int age = 30; // Or any desired age
@@ -69,6 +71,10 @@ public Person person3Parameters(){
             return new Person(name(), age(), address());
         }
 
+        @Bean(name="address4")
+        public Address address4(){
+        return new Address("Baker Street","London");
+    }
 
         @Bean(name = "address3")
     @Qualifier("address3qualifier")

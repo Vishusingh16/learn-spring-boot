@@ -26,6 +26,7 @@ System.out.println(context.getBean("name"));
        System.out.println(context.getBean(HelloWorldConfiguration.Address.class));
         System.out.println(context.getBean("person5qualifier"));
        System.out.println(context.getBean(HelloWorldConfiguration.Person.class));
+       System.out.println(context.getBean("address4"));
         //  Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
