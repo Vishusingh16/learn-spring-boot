@@ -5,7 +5,7 @@ public interface gamingconsolejava {
     void up();
     void down();
     void left();
-    void right(     );
+    void right();
 
 
 }
